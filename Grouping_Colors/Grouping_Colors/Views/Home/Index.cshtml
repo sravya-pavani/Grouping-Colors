@@ -1,0 +1,144 @@
+﻿@model Grouping_Colors.Models.ColorGroupViewModel
+<link href="~/Content/ViewStyling.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Grouping Colors";
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width"/>
+}
+<title>@ViewBag.Title</title>
+@if(Model == null){
+ <h2>No Data returned from API!! Try agian</h2>
+}
+else 
+{
+<div class="form-group" style="width: 100%;">
+     @if(Model.GroupOne != null)
+     {
+        <h2>Group One Colors</h2>
+            <table class="table table-bordered" id="colors">
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                     <th>
+                        Year
+                    </th>
+                     <th>
+                        Color
+                    </th>
+                     <th>
+                        PantOne Value
+                    </th>
+                </tr>
+                @foreach (var item in Model.GroupOne) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.Color)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PantOneValue)
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        @if(Model.GroupTwo != null)
+        {
+         <h2>Group Two Colors</h2>
+        <table class="table table-bordered" id="colors">
+           
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                     <th>
+                        Year
+                    </th>
+                     <th>
+                        Color
+                    </th>
+                     <th>
+                        PantOne Value
+                    </th>
+                </tr>
+                @foreach (var item in Model.GroupTwo) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.Color)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PantOneValue)
+                        </td>
+                    </tr>
+                }
+            </table>
+            }
+        @if(Model.GroupThree != null)
+        {
+        <h2>Group Three Colors</h2>
+        <table class="table table-bordered" id="colors">
+             
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                     <th>
+                        Year
+                    </th>
+                     <th>
+                        Color
+                    </th>
+                     <th>
+                        PantOne Value
+                    </th>
+                </tr>
+                @foreach (var item in Model.GroupThree) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.Color)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PantOneValue)
+                        </td>
+                    </tr>
+                }
+            </table>
+            }
+    </div>
+}
